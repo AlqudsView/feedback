@@ -220,18 +220,22 @@ button:hover, .slide-btn:hover {
     position: relative;
     width: 85%;
     max-width: 600px;
+    height: 100vh; /* Ensuring it takes the full height of the viewport */
+    display: flex; /* Using flex to center the content */
+    align-items: center; /* Centering content vertically */
+    justify-content: center; /* Centering content horizontally */
     overflow: hidden;
-    background-color: white ;
+    background-color: white;
     border-radius: 5px;
-	padding: 1px;
-   
+    padding: 1px;
 }
 
 .slide {
     display: none;
     width: 100%;
-	align-items: center;
-    justify-content: center; 
+    align-items: center; /* Centering content vertically */
+    justify-content: center; /* Centering content horizontally */
+    box-sizing: border-box;
     transition: opacity 0.5s;
 }
 
