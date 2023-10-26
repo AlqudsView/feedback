@@ -24,344 +24,139 @@
         };
         firebase.initializeApp(firebaseConfig);
     </script>
-	
-	
-	
-	
-	
-	
-	
-	<style>
-	
-	 body {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    font-family: 'Tahoma', sans-serif;
-    background-image: url('https://i.postimg.cc/7h80XxKm/Whats-App-Image-2023-10-06-at-19-25-05-ab820d44.jpg');
-    background-size: cover; /* Ensure background image covers the entire viewport */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent image from tiling */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh; /* Ensure body takes at least full height of viewport */
-}
 
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.postimg.cc/7h80XxKm/Whats-App-Image-2023-10-06-at-19-25-05-ab820d44.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-.header p {
-    font-size: 24px;
-}
+        .review-box {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 1.0);
+            padding: 50px;
+            border-radius: 10px;
+        }
 
-		
-		.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Adjust the color and opacity */
-    z-index: 1;
-}
-
-       p {
-	   
-	font-size: 24px;   
-	font-family: 'aref-ruqaa', serif;
-    color: black;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-    text-align: center;
-    background-color: white;
-	background-position: center;
-    padding: 1px 15px; /* Adjusted padding */
-    border-radius: 6px;
-    
-}
-
-
+        h1, p {
+            font-family: 'aref-ruqaa', serif;
+            color: black;
+            text-align: center;
+            background-color: white;
+            border-radius: 6px;
+            padding: 1px 15px;
+        }
 
         h1 {
-            font-family: 'aref-ruqaa', serif; /* Fixed the font-family declaration */
-            color: black;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
             font-size: 24px;
-			text-align: center;
             margin: 0;
             padding: 5px 0;
         }
 
-      .slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Vertically center the content */
-    height: 100%; 
-    position: center;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    box-sizing: border-box;
-}
+        p {
+            font-size: 24px;
+        }
 
-.rating {
-    direction: ltr;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-}
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            direction: rtl;
+        }
 
-.rating input {
-    display: none;
-}
+        .rating input {
+            display: none;
+        }
 
-.rating label {
-    cursor: pointer;
-    font-size: 40px;
-    color: #ccc;
-    transition: color 0.3s ease-in-out;
-}
+        .rating label {
+            cursor: pointer;
+            font-size: 40px;
+            color: #ccc;
+            transition: color 0.3s ease-in-out;
+        }
 
-.rating label:before {
-    content: '\2605';
-}
+        .rating label:before {
+            content: '\2605';
+        }
 
-.rating input:checked ~ label,
-.rating label:hover,
-.rating label:hover ~ label {
-    color: #ffcc00;
-}
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #ffcc00;
+        }
 
-textarea.review {
-    font-family: 'aref-ruqaa', serif;
-    color: black;
-    text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
-    font-size: 16px;
-    text-align: right;
-    width: 60%;
-    border: none;
-    margin-top: 10px; /* Adjusted margin for spacing between textareas */
-    border-radius: 10px;
-    min-height: 50px;
-    background-color: rgba(243, 156, 18, 0.3);
-    resize: none;
-    outline: none;
-    overflow: hidden;
-}
-
-button {
-    font-family: 'aref-ruqaa', serif;
-    background-color: #f39c12;
-    color: black;
-    border: none;
-    padding: 8px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px; /* Space above the button */
-    font-size: 14px;
-    font-weight: bold;
-}
-
-#about-us {
-    /* Any specific styles for this section */
-	
-}
-
-#about-us h1 {
-    font-family: 'aref-ruqaa', serif;
-    color: black;
-	text-align: center;
-    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-    font-size: 24px;
-    margin: 0;
-    padding: 5px 0;
-	
-}
-
-#about-us p {
-   font-family: 'aref-ruqaa', serif; /* Fixed the font-family declaration */
-            color: black;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+        textarea.review {
+            width: 60%;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: rgba(243, 156, 18, 0.3);
             font-size: 16px;
-            margin: 0;
-            padding: 5px 0;
-			text-align: center;
-
-}
-/* Button styling */
-.slide-btn {
-    position: fixed;
-    top: 50%;
-    font-size: 24px;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-#prev { left: 10px; }
-#next { right: 10px; }
-.slide-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-}
-button, .slide-btn {
-    ...
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-button:hover, .slide-btn:hover {
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-
-
-.slides-container {
-    position: relative;
-    width: 85%;
-    max-width: 600px;
-    height: 100vh; /* Ensuring it takes the full height of the viewport */
-    display: flex; /* Using flex to center the content */
-    align-items: center; /* Centering content vertically */
-    justify-content: center; /* Centering content horizontally */
-    overflow: hidden;
-    background-color: white;
-    border-radius: 5px;
-    padding: 1px;
-}
-
-.slide {
-    display: none;
-    width: 100%;
-    align-items: center; /* Centering content vertically */
-    justify-content: center; /* Centering content horizontally */
-    box-sizing: border-box;
-    transition: opacity 0.5s;
-}
-
-.slide.active {
-    display: flex;
-}
-
-.slide img {
-    width: 100%;
-    border-radius: 5px; /* If you want the images also to have rounded corners */
-}
-
-.slide-content {
-    font-family: 'aref-ruqaa', serif;
-    color: black;
-    
-    text-align: center;
-}
-
-.slide-content h1 {
-    font-size: 24px;
-    margin: 0;
-	text-align: center;
-    padding: 5px 0;
-}
-
-.slide-content p {
-    font-size: 16px;
-    margin: 0;
-    padding: 5px 0;
-	text-align: center;
-}
-
-.slide-btn {
-    position: absolute;
-    top: 50%;
-    font-size: 24px;
-    color: #ffffff;
-    background-color: #f39c12;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s, background-color 0.3s ease;
-}
-
-#prev {
-    left: 0;
-    transform: translateY(-50%);
-}
-
-#next {
-    right: 0;
-    transform: translateY(-50%);
-}
-
-button, .slide-btn {
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover, .slide-btn:hover {
-    background-color: #e67e22;
-    transform: scale(1.05); /* Add a slight enlargement on hover */
-}
-
- #logo {
-            width: 85px;
-            height: auto;
+            color: black;
+            text-align: right;
+            resize: none;
+            outline: none;
+			position: center-right;
+        }
+		
+   button {
+            background-color: orange; /* Orange background */
+            color: black;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
-
-	</style>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+        button:hover {
+            background-color: #ff9933; /* Darker orange on hover */
+        }
+ 
+    </style>
 </head>
 
 <body>
 
-    <!-- ... [Your HTML content here] ... -->
-	
-	    <div class="slides-container">
-        <section id="review-section" class="slide active">
-            <h1>كيف كانت خدمتنا؟</h1>
-            <form id="review-form">
-                <div class="rating">
-                    <input type="radio" id="star1" name="rating" value="5">
-                    <label for="star1"></label>
-                    <input type="radio" id="star2" name="rating" value="4">
-                    <label for="star2"></label>
-                    <input type="radio" id="star3" name="rating" value="3">
-                    <label for="star3"></label>
-                    <input type="radio" id="star4" name="rating" value="2">
-                    <label for="star4"></label>
-                    <input type="radio" id="star5" name="rating" value="1">
-                    <label for="star5"></label>
-                </div>
+    <div class="review-box">
+        <h1>كيف كانت خدمتنا؟</h1>
+        <form id="review-form">
+            <div class="rating">
+                <input type="radio" id="star1" name="rating" value="5">
+                <label for="star1"></label>
+                <input type="radio" id="star2" name="rating" value="4">
+                <label for="star2"></label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3"></label>
+                <input type="radio" id="star4" name="rating" value="2">
+                <label for="star4"></label>
+                <input type="radio" id="star5" name="rating" value="1">
+                <label for="star5"></label>
+            </div>
 
-                <div class="container">
-                    <textarea class="review" name="floorNumber" placeholder="رقم الطابق" required></textarea>
-                    <textarea class="review" name="tableNumber" placeholder="رقم الطاولة" required></textarea>
-                    <textarea class="review" name="reviewText" placeholder="أضف مراجعتك" required></textarea>
-                    <button type="submit">إرسال المراجعة</button>
-                </div>
-            </form>
-        </section>
+            <textarea class="review" name="floorNumber" placeholder="رقم الطابق" required></textarea>
+            <textarea class="review" name="tableNumber" placeholder="رقم الطاولة" required></textarea>
+            <textarea class="review" name="reviewText" placeholder="أضف مراجعتك" required></textarea>
+            
+			
+          <div>
+	  	  <button type="submit">إرسال المراجعة</button>
+		  </div>
+		  
+		</form>
     </div>
-	
+
     <script>
         document.getElementById('review-form').addEventListener('submit', function (event) {
             event.preventDefault();
