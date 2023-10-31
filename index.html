@@ -148,7 +148,7 @@
             <textarea class="review" name="floorNumber" placeholder="رقم الطابق" required></textarea>
             <textarea class="review" name="tableNumber" placeholder="رقم الطاولة" required></textarea>
             <textarea class="review" name="reviewText" placeholder="أضف مراجعتك" required></textarea>
-	    <textarea class="review" name="phonenumber" placeholder="رقم تلفونك" required></textarea>	
+	    <textarea class="review" name="number" placeholder="رقم تلفونك" required></textarea>	
             
 			
           <div>
@@ -166,7 +166,7 @@
             const floorNumber = document.querySelector('textarea[name="floorNumber"]').value;
             const tableNumber = document.querySelector('textarea[name="tableNumber"]').value;
             const reviewText = document.querySelector('textarea[name="reviewText"]').value;
-            const phonenumber = document.querySelector('textarea[name="phonenumber"]').value;
+            const number = document.querySelector('textarea[name="number"]').value;
 		
             const dbRef = firebase.database().ref('reviews');
 
@@ -175,7 +175,7 @@
                 floorNumber,
                 tableNumber,
                 reviewText,
-		phonenumber,
+		number,
                 timestamp: new Date().toISOString()
             }, function (error) {
                 if (error) {
